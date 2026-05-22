@@ -2,7 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.*;
 
-public class SignupStepdefination {
+public class SignupStepDefinition {
 
 	@Given("User launches Parabank application")
 	public void user_launches_parabank_application() {
