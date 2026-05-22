@@ -18,6 +18,7 @@ public class LoginPage {
 	
 	//Other locators
 	private By logout_link = By.linkText("Log Out");
+	
 	private By balance_loc = By.xpath("(//td[@align='right'])[1]");
 	
 	

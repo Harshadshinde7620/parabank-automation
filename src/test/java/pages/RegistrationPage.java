@@ -26,6 +26,9 @@ public class RegistrationPage {
 	
 	private By register_btn= By.xpath("//input[@value='Register']");
 	
+	//After Registration
+	private By success_msg= By.xpath("//p[contains(text(),'Your account was created successfully')]");
+	
 	//constructor
 	
 	public RegistrationPage(WebDriver driver) {
@@ -40,22 +43,33 @@ public class RegistrationPage {
 	}
 	
 	//Registration page action method to fill the details
-	public void register(String fName, String lName, String address, String city, String state, String zipcode, String phone, String ssn, String username, String password, String cpassword) {
+	public void register(String fName, String lName, 
+			String address, String city, String state, String zipcode, 
+			String phone, String ssn, String username, String password, 
+			String cpassword) {
 	
-		driver.findElement(firstName_loc).sendKeys();
-		driver.findElement(lastName_loc).sendKeys();
-		driver.findElement(address_loc).sendKeys();
-		driver.findElement(city_loc).sendKeys();
-		driver.findElement(state_loc).sendKeys();
-		driver.findElement(zipcode_loc).sendKeys();
-		driver.findElement(phonenumber_loc).sendKeys();
-		driver.findElement(ssn_loc).sendKeys();
+		driver.findElement(firstName_loc).sendKeys(fName);
+		driver.findElement(lastName_loc).sendKeys(lName);
+		driver.findElement(address_loc).sendKeys(address);
+		driver.findElement(city_loc).sendKeys(city);
+		driver.findElement(state_loc).sendKeys(state);
+		driver.findElement(zipcode_loc).sendKeys(zipcode);
+		driver.findElement(phonenumber_loc).sendKeys(phone);
+		driver.findElement(ssn_loc).sendKeys(ssn);
 		
-		driver.findElement(username_loc).sendKeys();
-		driver.findElement(password_loc).sendKeys();
-		driver.findElement(confirm_loc).sendKeys();
-		
-		driver.findElement(register_btn).click();
+		driver.findElement(username_loc).sendKeys(username);
+		driver.findElement(password_loc).sendKeys(password);
+		driver.findElement(confirm_loc).sendKeys(cpassword);
+
 	}
 
-}
+	public void clickRegisterButton() {
+		driver.findElement(register_btn).click();
+	}
+	
+	public boolean isRegistrationSuccessful() {
+	    return driver.findElement(success_msg).isDisplayed();
+	}
+	}
+
+

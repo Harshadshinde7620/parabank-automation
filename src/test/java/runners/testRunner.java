@@ -8,13 +8,13 @@ public class testRunner {
 	
 	@CucumberOptions(
 		
-			features="src/test/java/features",
+			features="src/test/resources/features",
 			glue= "stepdefinitions",
 			tags="@Task1",
 			plugin= {
 					"pretty",   								// Console output
 					
-	                "html:testOutputs/cucumber-report.html",	// HTML report
+	                "html:testOutputs/cucumber-report-@Task1.html",	// HTML report
 
 	                "json:testOutputs/cucumber.json",			// JSON report
 
