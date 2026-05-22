@@ -1,0 +1,25 @@
+# Maven
+target/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Test Output
+test-output/
+
+# Screenshots
+screenshots/
+
+# Temporary Files
+*.tmp
+
+# Compiled Files
+*.class
