@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="14.803" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Parabank Registration and Login Functionality" name="Verify user is able to register and login successfully" time="14.558">
+<system-out><![CDATA[
+Given User launches Parabank application....................................passed
+When User clicks on Register link...........................................passed
+And User enters all registration details....................................passed
+And User clicks on Register button..........................................passed
+Then User account should get created successfully...........................passed
+When User logs out from application.........................................passed
+And User enters valid login credentials.....................................passed
+Then User should login successfully.........................................passed
+And User prints account balance.............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

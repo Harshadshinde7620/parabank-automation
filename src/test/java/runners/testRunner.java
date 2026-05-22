@@ -3,28 +3,30 @@ package runners;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-public class testRunner {
+@CucumberOptions(
 
-	
-	@CucumberOptions(
-		
-			features="src/test/resources/features",
-			glue= "stepdefinitions",
-			tags="@Task1",
-			plugin= {
-					"pretty",   								// Console output
-					
-	                "html:testOutputs/cucumber-report-@Task1.html",	// HTML report
+        features = "src/test/resources/features",
 
-	                "json:testOutputs/cucumber.json",			// JSON report
+        glue = {"stepdefinitions", "hooks"},
 
-	                "junit:testOutputs/cucumber.xml"
-},
-			monochrome = true,                               // Clean console output
-		    dryRun = false                                   // Check for missing step definitions
-					)
+        tags = "@Task1",
 
-	public class TestRunner extends AbstractTestNGCucumberTests{
-	}
+        plugin = {
+
+                "pretty",
+
+                "html:testOutputs/cucumber-report.html",
+
+                "json:testOutputs/cucumber.json",
+
+                "junit:testOutputs/cucumber.xml"
+        },
+
+        monochrome = true,
+
+        dryRun = false
+)
+
+public class TestRunner extends AbstractTestNGCucumberTests {
+
 }
-
